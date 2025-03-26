@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <style>
+        /* div {
+            border: 1px solid gray;
+        } */
+        .my-info {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            /* border : 1px solid red; */
+            width  : 800px;
+            height : 120px;
+            box-sizing: border-box;
+            align-items: center;
+        }
+        #icon {
+            width:40px;
+            height:40px;            
+        }
+        #my-bar {
+            width:10px;
+            background-color: lightblue;
+            height:100%;
+        }
+        #developer {
+            width:100px;
+            height:100%;
+            font-weight: 800;
+        }
+        #personal-info {
+            width:610px;
+            height:100%;
+        }
+        #blog-link {
+            color : lightblue;
+            font-weight: 700;
+        }
+
+        .about {
+            margin-top: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            /* border : 1px solid red; */
+            width  : 800px;
+            height : 120px;
+            box-sizing: border-box;            
+        }
+        #about-bar {
+            margin-left:40px;
+            width:10px;
+            background-color:lightgreen;
+            height:100%;
+        }
+        #about-title {
+            font-weight: 800;
+            width : 100px;
+        }
+        #about-Intro {
+            width : 610px;
+        }
+        .skill {
+            margin-top: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            /* border : 1px solid red; */
+            width  : 800px;
+            height : 120px;
+            box-sizing: border-box;
+        }
+        #skill-bar {
+            margin-left:40px;
+            width:10px;
+            background-color: lightpink;
+            height:100%;
+        }
+        #skill-title {
+            font-weight: 800;
+            width : 100px;
+        }
+        #skill-item {
+            width : 610px;
+        }
+        .portfolio {
+            margin-top: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            /* border : 1px solid red; */
+            width  : 800px;
+            height : 120px;
+            box-sizing: border-box;
+        }
+        #portfolio-bar {
+            margin-left:40px;
+            width:10px;
+            background-color:lightslategrey ;
+            height:100%;
+        }
+        #portfolio-title {
+            font-weight: 800;
+            width : 100px;
+        }
+        .career {
+            margin-top: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            /* border : 1px solid red; */
+            width  : 800px;
+            height : 120px;
+            box-sizing: border-box;
+        }
+        #career-bar {
+            margin-left:40px;
+            width:10px;
+            background-color:darkkhaki ;
+            height:100%;
+        }
+        #career-title {
+            font-weight: 800;
+            width : 100px;
+        }
+
+        .project {
+            margin-top: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            /* border : 1px solid red; */
+            width  : 800px;
+            height : 120px;
+            box-sizing: border-box;
+        }
+        #project-bar {
+            margin-left:40px;
+            width:10px;
+            background-color:lightcoral ;
+            height:100%;
+        }
+        #project-title {
+            font-weight: 800;
+            width : 100px;
+        }
+
+        .license {
+            margin-top: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            /* border : 1px solid red; */
+            width  : 800px;
+            height : 120px;
+            box-sizing: border-box;
+        }
+        #license-bar {
+            margin-left:40px;
+            width:10px;
+            background-color:cornflowerblue ;
+            height:100%;
+        }
+        #license-title {
+            font-weight: 800;
+            width : 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my-info">
+        <div id="icon"></div>
+        <div id="my-bar"></div>
+        <div id="developer">Personal Info</div>
+        <div id="personal-info">
+            <ul>
+                <li>Email : guardmon@naver.com</li>
+                <li>Blog  : <a id="blog-link" href="https://blog-17.tistory.com">blog-17</a></li>
+                <li>Tel   : 010-7567-2539</li>
+                <li>Addr  : 서울특별시 강북구</li>
+            </ul>
+        </div>
+    </div>
+    <div class="about">
+        <div></div>
+        <div id="about-bar"></div>
+        <div id="about-title">About</div>
+        <div id="about-Intro">내용</div>
+    </div>
+    <div class="skill">
+        <div></div>
+        <div id="skill-bar"></div>
+        <div id="skill-title">Skill</div>
+        <div id="skill-item">
+            <ul>
+                <li>HTML5</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>J-Query</li>
+            </ul>
+        </div>
+    </div>
+    <div class="portfolio">
+        <div></div>
+        <div id="portfolio-bar"></div>
+        <div id="portfolio-title">Portfolio</div>
+    </div>
+    
+    <div class="career">
+        <div></div>
+        <div id="career-bar"></div>
+        <div id="career-title">Career</div>
+    </div>
+
+    <div class="project">
+        <div></div>
+        <div id="project-bar"></div>
+        <div id="project-title">Project</div>
+    </div>
+
+    <div class="license">
+        <div></div>
+        <div id="license-bar"></div>
+        <div id="license-title">License</div>
+    </div>
+
+</body>
+</html>
+
+<!--
+    <a href=""><img id="myimg" src="resources/images/no-face.png" width="40px" height="40px"></img></a>
+-->

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제1</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>1. 전체 선택 체크 시</legend>
+            <input type="checkbox" name="hobby" id="all" value="all" onchange="allCheck();">
+            <label for="all">전체선택</label>
+            <input type="checkbox" name="hobby" id="total" value="total" onchange="checkboxTrigger();">
+            <label for="total">종합</label>
+            <input type="checkbox" name="hobby" id="fiction" value="fiction" onchange="checkboxTrigger();">
+            <label for="fiction">소설</label>
+            <input type="checkbox" name="hobby" id="essay" value="essay" onchange="checkboxTrigger();">
+            <label for="essay">시/에세이</label>
+            <input type="checkbox" name="hobby" id="economy" value="economy" onchange="checkboxTrigger();">
+            <label for="economy">경제/경영</label>
+            <input type="checkbox" name="hobby" id="development" value="development" onchange="checkboxTrigger();">
+            <label for="development">자기계발</label>
+        </fieldset>
+        <br>
+        <div>
+            <div>카테고리 선택</div>
+            <div>
+                <intput type="text" id="category"></intput>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function allCheck() {
+            let all = document.getElementById("all");
+            console.log(all.checked);
+            let hobbyList = document.getElementsByName("hobby");
+            console.log(hobbyList);
+            for (let checkbox of hobbyList) {
+                checkbox.checked = all.checked;
+            }
+        }
+        function checkboxTrigger() {
+            let allChecked = true;
+
+            let hobbyList = document.getElementsByName("hobby");
+            for (let hobby of hobbyList) {
+                console.log(hobby.value);
+                if (hobby.value == "all") {
+                    continue;
+                }
+                if (hobby.checked == false) {
+                    allChecked = false;
+                }
+            }
+            document.getElementById("all").checked = allChecked;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 문서구조</title>
+    <style>
+        div {
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 1000px;
+            height: 800px;
+            min-width: 800px;
+            min-height: 500px;
+            /* 최소크기설정 min-*, 최대크기설정 max-* */
+            margin: auto;
+        }
+
+        /** 3개 영역 (#header, #content, #footer) **/
+        /* #header, #content, #footer {} */
+        .wrap>div {
+            width: 100%;
+        }
+
+        #header,
+        #footer {
+            height: 20%;
+        }
+
+        #content {
+            height: 60%;
+            display: flex;
+        }
+
+        /** #content 영역 내의 요소 배치 **/
+        /* #content1, #content2, #content3 {} */
+        #content>div {
+            height: 100%;
+        }
+
+        #content1,
+        #content3 {
+            width: 20%;
+        }
+
+        #content2 {
+            width: 60%;
+        }
+
+        /*
+        #content1, #content3 { width: 200px;}
+        #content2 { width: 300px;}
+        */
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- <header></header> -->
+        <div id="header"></div>
+        <!-- <main></main> 또는 <section></section> -->
+        <div id="content">
+            <!-- <article></article> 또는 <div></div> -->
+            <div id="content1"></div>
+            <div id="content2"></div>
+            <div id="content3"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="test3();">실행</button>
+<div class="area" id="area3"></div>
+
+<script>
+    function test3() {
+        const area3 = document.querySelector("#area3");
+
+        // const regexp1 = /^[a-zA-Z][a-zA-Z0-9]+$/;    // 플래그 문자 사용 X버전
+        const regexp1 = /^[a-z][a-z0-9]+$/i;    // 플래그 문자 사용 X버전
+        const str = "JavaScript JQuqery Ajax";
+
+        // 플래그 문자 m 테스트
+        const str3 = "JavaScript\nJQuery\nAjax";
+        console.log(str3);
+
+        regexp7 = /^J/;
+        console.log(str3.replace(regexp7, '@'));
+
+        regexp7 = /^J/g;
+        console.log(str3.replace(regexp7, '@'));
+
+        regexp7 = /^J/gm;
+        console.log(str3.replace(regexp7, '@'));
+
+        
+    }
+
+</script>
+
+<br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

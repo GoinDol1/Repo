@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #scale-box {
+            width: 100px; height: 100px;
+            border: 3px solid;
+
+            transition-duration: 2s; /* 에니메이션 실행시간 */
+        }
+        #scale-box:hover {
+            background-color: slateblue;            
+            transform: scale(0.5) /* 크기 변동 transition-duration 적용됨 */
+        }
+    </style>
+</head>
+<body>
+    <h1>scale</h1>
+    <p>요소의 크기를 변경시키는 기능</p>
+    <div id="scale-box"></div>
+</body>
+</html>

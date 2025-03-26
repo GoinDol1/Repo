@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 태그</title>
+</head>
+<ㅔ>
+    <h2>이미지 태그</h2>
+    <!-- 
+        <img src="표시하고자 하는 이미지 경로" alt="이미지 설명모드" width="200px" height="200px" 
+    -->
+    <img src="practice/picture/유튜브사진.jpg" alt="설명문구" width="200" height="200"><br>
+    <h3>* alt 속성: 이미지 설명 </h3>
+    <p> - 이미지 경로가 잘못되었을 경우 대체 
+        - 시각 장애인들을 위한 스크린 리더에서 이미지에 대한 설명을 읽어줄 수 있음
+    </p>
+    <img src="practice/picture/ekdkd.jpg" alt="이미지없을시" width="200" height="200"><br>
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fthumb11.iclickart.co.kr%2FThumb11%2F16550000%2F16540330.jpg&type=a340">
+    <h3>* width, height 속성 </h3>
+    <p> 
+        이미지의 가로 길이(width), 세로 길이(height) 길이 
+        고정길이(px), 가변길이(%) 지정 => 기본값 : px
+    </p>
+    <h4>고정 길이(px) => 기본값(단위) </h4>
+    <p>화면 크기가 변경되어도 이미지의 크기는 고정(변동 없음)</p>
+    <img src="practice/picture/유튜브사진.jpg" width="200" height="200">
+    <img src="practice/picture/유튜브사진.jpg" width="200" height="100">
+    <img src="practice/picture/유튜브사진.jpg" width="150" height="200">
+    <img src="practice/picture/유튜브사진.jpg" width="100" height="200">
+
+    <h4>가변 길이(%)</h4>
+    <p>화면 크기에 따라 이미지의 크기가 고정</p>
+    <img src="practice/picture/유튜브사진.jpg" width="50%" height="50">
+    <img src="practice/picture/유튜브사진.jpg" width="60%" height="60">
+    <img src="practice/picture/유튜브사진.jpg" width="70" height="70">
+    <img src="practice/picture/유튜브사진.jpg" width="80" height="80">
+
+    <h2>오디오 태그 : audio</h2>
+    <!-- 
+        <audio src = "오디오 파일 경로" 
+        controls autoplay loop muted 
+        - controls : 재생도구 출력여부
+        - autoplay : 자동재생 여부 => 동작되지 않음
+        - loop : 반복재생 여부
+        - muted : 음소거 설정
+     -->
+    <audio src="practice\audio\inner_peace.mp3" controls autoplay loop mute></audio><br>
+    
+    <h2>비디오 태그 : video</h2>
+    <!-- 
+        <video src = "비디오 파일 경로" 
+        controls autoplay loop
+        - controls : 재생도구 출력여부
+        - autoplay : 자동재생 여부 => 동작되지 않음
+        - loop : 반복재생 여부
+        - poster=썸네일 이미지 경로
+     -->
+    <video src="practice\video\sample.mp4" controls autoplay width=100px height=100></video>
+    <video src="practice\video\sample.mp4" controls="controls" autoplay="true" loop="loop" width="200" height="200"></video>
+
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <style>
+        /* div {
+            border: 1px solid red
+        } */
+
+        .item {
+            background-color: chartreuse;
+            color: blueviolet;
+            text-align: center;
+        }
+
+        .score {
+            background-color: black;
+            color: chartreuse;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+            background-color: antiquewhite;
+            color: darkgreen;
+            text-align: center
+        }
+
+        h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: antiquewhite;
+            color: DARKBLUE;
+            text-align: center;
+        }
+    </style>
+    <!-- <script>
+        let btn = document.getElementById("btn");
+        btn.onclick = function () {
+            window.alert('Hello, JavaScript!');
+        }
+        // 함수의 이름을 부여하여 정의
+        function btnClick() {
+            console.log("스크립트에서 출력하기~~");
+        }
+    </script> -->
+</head>
+
+<body>
+    <h2>Travel Plan</h2>
+    <h3>Grade</h3>
+    <div style="display:flex; flex-direction: column;">
+        <table border="1">
+            <tr>
+                <td colspan="4" align="center" style="background-color: aqua;"><b>평가결과</b></td>
+            </tr>
+            <tr>
+                <td class="item">과목</td>
+                <td class="item">HTML5</td>
+                <td class="item">CSS</td>
+                <td class="item">JavaScript</td>
+            </tr>
+            <tr>
+                <td class="score">점수</td>
+                <td class="score">100</td>
+                <td class="score">100</td>
+                <td class="score">100</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <h3>Travel Item</h3>
+    <div id="tra" style="display:flex; flex-direction: row; justify-content:space-around;">
+        <div><img src="여행1.jpg" width="200px" height="200px"></div>
+        <div><audio src="audio.mp3" controls autoplay loop mute></audio>
+        </div>
+        <div><video src="sample.mp4" controls="controls" autoplay="true" loop="loop" width="200px"
+                height="200px"></video> </div>
+    </div>
+    <br>
+    <h3>추천 여행사</h3>
+    <div id="travel-agency"
+        style="display: flex; flex-direction: row; justify-content:space-around; background-color: burlywood;">
+        <div style="width:100px">모두투어</div>
+        <div style="align-content: center; width:300px"><a href="https://www.modetour.com/"
+                target="_blank">https://www.modetour.com/</a></div>
+    </div>
+    <div id="travel-agency"
+        style="display: flex; flex-direction: row;justify-content:space-around; background-color: cadetblue;">
+        <div style="width:100px">하나투어</div>
+        <div style="align-content: center; width:300px"><a href="https://www.hanatour.com/"
+                target="_blank">https://www.hanatour.com/</a></div>
+    </div>
+    <div id="travel-agency"
+        style="display: flex; flex-direction: row;justify-content:space-around; background-color: chocolate;">
+        <div style="width:100px">여행박사</div>
+        <div style="align-content: center; width:300px"><a href="https://www.drtour.com/"
+                target="_blank">https://www.drtour.com/</a></div>
+    </div>
+    <br>
+
+    <label for="name">이름 : </label>
+    <input type="text" id="name"> <br>
+    <label for="eng">영어 : </label>
+    <input type="number" id="eng"> <br>
+    <button onclick="test1();">객체값얻기세팅</button>
+    <div class="area big" id="area1"></div>
+    <button onclick="test2();">객체추가및삭제</button>
+    <div class="area big" id="area2"></div>
+    <script>
+        function test1() {
+            const student = {
+                name: document.getElementById("name").value,
+                eng: Number(document.getElementById("eng").value),
+                toString: function () {
+                    return `${this.name} : ${this.eng}`;
+                    // return this.name + " : " + this.eng 
+                },
+                getSum: function () {
+                    return this.eng           // 총점을 구해서 반환 => 영어점수
+                },
+                getAvg: function () {
+                    return this.getSum() / 1  // 평균을 구해서 반환 => 총점/1
+                }
+            };
+            const area1 = document.getElementById("area1");   
+            // area1.innerHTML = "학생정보 : " + student.toString() + "<br>";  // student.name = document.getElementById("name").value;            
+            area1.innerHTML = "학생정보 : " + student.toString() + "<br>";     // area1.innerHTML = "학생정보 : " + student + "<br>"; 동일
+            area1.innerHTML += "name 속성이 있는가?" + ('name' in student) + "<br>";  // * in : '속성명' in 객체명 -> true/false
+            with (student) {
+                // student.name 또는 student['name']
+                area4.innerHTML += "이름 : " + name + "<br>"; area4.innerHTML += "영어점수 : " + eng + "<br>"; area4.innerHTML += "총점 : " + getSum() + "<br>"; area4.innerHTML += "평균 : " + getAvg() + "<br>";
+            }
+        }
+        function test2() {
+            const area2 = document.getElementById("area2");
+            // 비어있는 객체 선언
+            const student = {};
+            // 속성 추가하기
+            student.name = "윤석준"; // 학생 이름 추가 | name 속성 사용
+            area2.innerHTML = "이름 : " + student.name + "<br>";
+            // 메소드 추가 | toString
+            student.toString = function () {
+                 return "name: " + this.name;
+            }
+            area2.innerHTML += "student => " + student.toString() + "<br>";
+            // console.log(student);
+            // // 학생이름 속성 제거
+            student.name = null;   // 속성은 유지하되 값만 제거됨!  console.log(student);            
+            // delete (student.name); // 속성 자체가 삭제됨!  console.log(student);
+        }
+
+    </script>
+
+    <form action="">
+        <fieldset>
+            <legend>
+                <h3>다음 여행지 숙소</h3>
+            </legend>
+            장소 : <input type="text" name="place" id="place" required /> <br>
+            전화 : <input type="tel" name="tel" id="tel" />
+            이메일 : <input type="email" name="email" id="email" /> <br>
+        </fieldset><br>
+        <input type="submit" />
+    </form>
+    <br><br><br>
+
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - 텍스트 관련 스타일</title>
+
+    <style>
+        #c {color:red;
+            color: #0101ff;
+
+            /* 0 ~ 255 범위 */
+            color: rgb(0, 255, 0);
+            color: rgba(0, 255, 0, 0.3);  /* 0.3 => 30%투명도 */            
+            /* 색상(h): 0 ~ 360, 채도(s): 0~100%, 명도(1): 0~100% */
+            color: hsl(245, 81%, 46%);
+            color: hsla(245, 81%, 46%, 0.3);
+        }
+
+        #td1 {text-decoration: overline;}
+        #td2 {text-decoration: line-through;}
+        #td3 {text-decoration: underline;}
+        #td4 {text-decoration: none; background-color:greenyellow; color:white; padding: 10px}
+        #td4:hover {color: darkgreen; background-color: white;}
+
+        #tt1 {text-transform: uppercase;}
+        #tt2 {text-transform: lowercase;}
+        #tt3 {text-transform: capitalize;}
+
+        .shadow { font-size: 2em; font-weight:900; }
+        #ts1 {
+            color: brown;
+            text-shadow: 5px 5px; /* 오른쪽 아래로, 번짐 생략 -> 선명한 그림자. 생상 색략 */
+            text-shadow: -5px -5px 5px black;
+            /* 왼쪽 위로, 살짝 흐릿하고(번짐). 검정색 그림자 */
+
+        }
+        #ts2 {
+            color: white;
+            text-shadow: 0px 0px 10px red;
+            /* 입체감 있게 표현. 네온사인 효과. */
+            
+        }
+        #ts3 {
+            text-shadow: 0px 0px 4px darkgray
+                        , 0px -5px 4px yellow
+                        , 0px -10px 8px orangered
+                        , 0px -15px 15px red
+        }
+    </style>
+</head>
+<body>
+    <h1>텍스트 관련 스타일 (text~)</h1>
+    <h2>color : 텍스트 색상</h2>
+    <pre id="c">
+        선택자 {
+            color: 색상명 | #16진수 | rgb(r, g, b) | rgba(r, g, b, a) | hsl(h, s, l) | hsla(h, s, l, a);
+        }
+    </pre>
+    <hr>
+    <h3>text-decoration : 텍스트에 줄을 표시하거나 제거할 때 사용</h3>
+    <pre>
+        선택자 {
+            text-decoration: none | underline | line-through | overline;
+        }
+    </pre>
+    <ul>
+        <li id="td1">텍스트에 줄긋기</li>
+        <li id="td2">텍스트에 줄긋기</li>
+        <li id="td3">텍스트에 줄긋기</li>
+    </ul>
+
+    <a id="td4" href="www.naver.com" target="_blank">네이버로</a>
+    <hr>
+    <h3>text-transform : 영문 텍스트의 대소문자 변환 시 사용</h3>
+    <pre>
+        선택자 {
+            text-transform: uppercase | lowercase | capitalize;
+        }
+    </pre>
+
+    <ul>
+        <li id="tt1">uppercase : 모든 영문자를 대문자로 교환</li>
+        <li id="tt2">LOWERCASE : 모든 영문자를 소문자로 교환</li>
+        <li id="tt3">capitalize test : 영문자의 첫글자만 대문자로 변환</li>
+    </ul>
+
+    <hr>
+    <h3>text-shadow : 텍스트에 그림자 효과를 줄 때 사용</h3>
+    <pre>
+        선택자 {
+            text-shadow: 가로거리(x) 세로거리(y) [번짐정도] [색상]
+        }
+    </pre>
+    <div>
+        <span class="shadow" id="ts1">COOKIE</span><br><br><br>
+        <span class="shadow" id="ts2">COOKIE</span><br><br>
+        <span class="shadow" id="ts3">COOKIE</span>
+    </div>
+
+    <hr>
+    <h3>text-align : 텍스트 정렬</h3>
+    <pre>
+        선택자 {
+            text-align: left(기본값) | right | center | justify(양쪽);
+        }
+    </pre>
+    <h4>왼쪽정렬(기본)</h4>
+    <p style="text-align:left;">
+        모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다.
+        모든 국민은 양심의 자유를 가진다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다. 국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다.        
+    </p>
+    <h4>오른쪽정렬</h4>
+    <p style="text-align:right;">
+        모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다.
+        모든 국민은 양심의 자유를 가진다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다. 국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다.        
+    </p>
+    <h4>가운데정렬</h4>
+    <p style="text-align:center;">
+        모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다.
+        모든 국민은 양심의 자유를 가진다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다. 국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다.        
+    </p>
+    <h4>양쪽정렬</h4>
+    <p style="text-align:justify;">
+        모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다.
+        모든 국민은 양심의 자유를 가진다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다. 국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다.        
+    </p>
+    <hr>
+    <h3>line-height : 줄 간격 조절 (장평 조절)</h3>
+    <pre>
+        선택자 {
+            line-height: normal(기본) | px | em | %;
+        }
+    </pre>
+    <h4>고정 단위 간격</h4>
+    <p style="line-height: 30px;">
+        모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다.
+        모든 국민은 양심의 자유를 가진다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다. 국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다.        
+    </p>
+    <h4>가변 단위 간격(em)</h4>
+    <p style="line-height: 3.5em;">
+        모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다.
+        모든 국민은 양심의 자유를 가진다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다. 국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다.        
+    </p>
+
+    <h4>가변 단위 간격(%)</h4>
+    <p style="line-height: 250%;">
+        모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다.
+        모든 국민은 양심의 자유를 가진다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다. 국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다.        
+    </p>
+
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

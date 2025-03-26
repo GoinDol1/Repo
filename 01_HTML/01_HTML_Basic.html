@@ -1,0 +1,91 @@
+<!DOCTYPE html> <!-- 문서 유형 정의. html 형식의 문서 선언 -->
+<br lang="ko"> <!-- 문서 전체를 감싸는 태그 (html). 문서의 시작과 끝을 나타낸다 -->
+  <!-- lang속성 : 문서 고유 언어 설정. (ko, en, ...) -->
+<head>
+    <meta charset="UTF-8"> <!-- 인코딩 설정 : charset -->
+    <meta name = "viewport" content = "width=device-width"> <!-- 뷰포트 브라우저의 웹 콘텐츠를 볼 수 있는 창의 영역 -->
+    <meta name = "generator" content="VS Code"> <!-- 문서작성시 사용된 프로그램-->
+    <meta name = "author" content="sujin"> <!-- 문서 작성자-->
+    <meta name = "description" content="HTML 공부를 위한 첫번째 문서">
+    <title>html 시작하기</title>
+    <!-- 문서의 제목 설정(브라우저의 탭 부분에 반영)-->
+</head>
+<hr>
+    <!-- 몸체부, 실제로 ㅂ라우저에 표시되는 내용 -->
+     <h2>제목</h2>
+     @@@@@@@@@@@@
+     <p>ooooooooo</p>
+     <p>문단을 나누는 태그로 p태그와 pre태그가 있다. 
+        p 태그는 태그 내에 줄바꿈처리를 하고자 한다면 별도의 태그를 사용해야 한다.=>br을 사용 </p>
+     <pre>문단을 </pre>
+     <p>aaa<sub>dddd</sub><sup>eeee</sup></p>
+     <s>abcdefghi</s>
+     <p><abbr title="Internet of Things">IoT</abbr></p> <!-- 틀팁이 보여야 하나 안보이지? -->
+     <cite>cite</cite>
+     <code>funtion savetheLocal()</code>
+     <pre>dkdkdfk
+        dsfkslfask
+        ksfsdfsl
+     </pre>
+     <p>13,000<small>13,000</small></p>
+     <u>밑줄</u>
+     <p><ins>새로운 내용을 삽입</ins></p>
+     <p><del>기존 내용을 삭제</del></p>  
+     ab
+     cd
+     <hr>de</hr>
+     fg
+     <p></p><strong>중요한 테그에</strong> <!-- b와 다름 (검색엔진등에서 사용시 사용) -->
+     <p></p>
+     <b>강조 문구</b>
+     <mark>dd</mark>
+     <em>중요한 테그에 기울이고</em> <!-- i와 다름 (검색엔진등에서 사용시 사용)-->
+     <blockquote>다른 블로그의 글을 인용할 경우 내용 (개행을 내포하고 있음) </blockquote> 개행이되넹
+     <q>다른 블로그의 글을 인용할 경우 내용 (개행을 내포하고 있지 않음)</q> 개행이 안되넹
+     <kbd>Ctrl</kbd>
+     <br>ddkdk
+     @&nbsp;&nbsp;&nbsp;@<br>
+     @     @
+    <pre>prev 태그는 시작테그부터 종료태그까지 
+      입력된 내용을 그대로 표시
+        줄바꿈 <br>
+
+        
+      그래로 표현
+         @&nbsp;&nbsp;&nbsp;@<br>
+         @     @
+    </pre>
+    <br><br> br*2하면 2개의 br만들어짐<br>
+a<sup>2</sup>+b<sup>2</sup>=c<sup>2</sup><br>
+H<sub>2</sub>O<br>
+<ul> <!-- 순서가 없는 tag -->
+  <li>내용1</li>
+    <ul>
+      <li>pre, p</li>
+      <li>ol, ul, dl</li>
+    </ul>
+  <li>내용2</li>
+  <li>내용3</li>
+  <li>내용4</li>
+</ul>
+<ol type="a" start=5 reversed ><!-- 순서가 있는 tag 숫자-1, 알파벳-a/A, 아라비아 숫자-i/I reversed-역순-->
+  <li>내용1</li>
+  <li>내용2</li>
+  <li>내용3</li>
+  <li>내용4</li>
+</ol>
+<dl> <!-- 용어나 문장에 대한 정의(definition) 리스트로 자동으로 들여쓰기가 됨 -->
+  <dt>타이틀1</dt>
+  <dd>내용1</dd>
+  <dt>타이틀2</dt>
+  <dd>내용2</dd>
+</dl>
+<p>
+  태그 중첩 사용 <br>
+  <b><em>굵은 글자를 기율여서 표시</b></em>
+</p>
+<table border="1"><caption>header</caption><tr><td>1,1</td></tr>
+  <tr><td>1,2</td><td>2,1</td></tr>
+</table>
+</body>
+</html>

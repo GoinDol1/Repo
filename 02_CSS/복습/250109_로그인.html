@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인폼</title>
+    <style>
+        /* div, form { border: 1px solid gray; box-sizing:border-box;} */
+        .login-form {
+            /* border: 1px solid gray; */
+            background-color: lightgray;
+            border-radius: 10px;
+            box-sizing:border-box;
+            box-shadow: 7px 7px 20px 5px gray;
+            margin:auto;
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 30px;
+            width: 300px;
+            height: 30%;
+        }
+        
+        .login-form > #member-create-link { 
+            height: 20%;
+            text-align: center;
+        }
+        .member-create {
+            text-decoration: none;
+        }
+        .login {
+            border:none;
+            width: 100%; 
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            box-sizing:border-box;
+        }
+        #user-email { width: 100%; box-sizing:border-box;}
+        #user-pwd { width: 100%; box-sizing:border-box;}
+    </style>
+</head>
+
+<body>
+    <div class="login-form">
+        <div>
+            <h2>로그인</h2>
+        </div>
+        <form action="http://www.naver.com">
+            <div><label for="user-email">이메일</label><br><br><input type="text" id="user-email" placeholder="이메일을 입력해주세요.">
+            </div><br>
+            <div><label for="user-pwd">비밀번호</label><br><br><input type="password" id="user-pwd" placeholder="비밀번호를 입력해주세요."></div><br>
+            <div><input class="login" type="submit" value="로그인" onclick="return false;"></input></div>
+        </form>
+        <hr>
+        <div id="member-create-link">
+            <a href="250109_회원가입.html" class="member-create">회원가입</a>
+        </div>
+    </div>
+</body>
+
+</html>

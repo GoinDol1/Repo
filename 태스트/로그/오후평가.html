@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <form action="로그인.html">
+        <div class="area login" id="area" style="width:400px; height:400px; border: 1px solid black;"></div>
+        <button id="login" onclick="return loginClick();">로그인</button>
+    </form>
+    <script>
+        function loginClick() {
+            const area = document.getElementById("area");
+            const idText = document.createTextNode("아이디 : ");
+            area.appendChild(idText);
+
+            const idInput = document.createElement("input");
+            with (idInput)
+            {
+                setAttribute("type","text");
+                setAttribute("placeholder","아이디는 8자이상 12자 이내");
+                setAttribute("maxlength", "12");
+                setAttribute("minlength", "8");
+                setAttribute('required', '');
+            }
+            area.appendChild(idInput);
+            area.appendChild(document.createElement("br"));
+
+            const passText = document.createTextNode("비밀번호 : ");
+            area.appendChild(passText);
+            const passInput = document.createElement("input");
+            with (passInput)
+            {
+                setAttribute("id","pass-input");
+                setAttribute("type","password");
+                setAttribute("placeholder","영문,숫자, 특수문자 8~32자");
+                setAttribute("maxlength", "32");
+                setAttribute("minlength", "8");
+                setAttribute('required', '');
+            }
+            area.appendChild(passInput);
+
+            const msgH3 = document.createElement("h3");
+            area.appendChild(msgH3);
+
+            const msgH4 = document.createElement("h4");
+            msgH4.setAttribute("id","h4-msg");
+            area.appendChild(msgH4);
+
+            // 동적태그에 이벤트 추가   
+            // 이건 안됨 document.querySelector("#pass-input").onclick = function() { alert("msg"); }
+            // $(document).on('click', '#pass-input', function() { 
+            // 이건 잘되넹 
+            //     alert('msg');
+            // });
+            // [표준이벤트방식]으로 이벤트 등록
+            document.getElementById("pass-input").addEventListener("click", function(event) { 
+            // 이거도 잘되넹
+                document.querySelector("#pass-input + h3").innerHTML += "도도도"; // 잘되넹
+                document.querySelector("#pass-input + h3").style.backgroundColor = "red"; // 콘솔 소스 맨오른쪽 상단에 조사식항목 이용가능
+            });
+
+            document.getElementById("pass-input").addEventListener("mouseover", function(event) { // onmouseover=> mouseover
+            // 이거도 잘되넹
+                document.querySelector("#pass-input + h3").style.backgroundColor = "blue"; // 콘솔 소스 맨오른쪽 상단에 조사식항목 이용가능                
+            });            
+ 
+            document.querySelector("#pass-input + h3").addEventListener("click", function(event) { 
+            // 이거도 잘되넹
+                //document.querySelector("#pass-input + h4").innerHTML += "이이이"; // 안되넹
+                document.querySelector("#h4-msg").innerHTML = "그러겡"; // 콘솔 소스 맨오른쪽 상단에 조사식항목 이용가능
+                document.querySelector("#h4-msg").style.backgroundColor = "yellow"; // 콘솔 소스 맨오른쪽 상단에 조사식항목 이용가능
+            });
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

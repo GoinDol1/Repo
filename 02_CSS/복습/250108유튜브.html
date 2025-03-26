@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <style>
+        .youtube {
+            /* 전체 컨테이너 */
+            /* border: 4px solid red; */
+            display: flex;
+            flex-direction: column;
+            justify-content: first_start;
+            width: 400px;
+            height: 100%;
+        }
+
+        .the-top {
+            /* 상단 div 컨테이너 */
+            /* border: 1px solid green; */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            height: 30px;
+        }
+
+        .youtube-image {
+            /* 좌상단 유트브 이미지 */
+            border: 1px solid green;
+            background-color: pink;
+            width: 120px;
+            height: 30px;
+        }
+
+        .search {
+            /* 상단 검색 */
+            border: 1px solid green;
+            background-color: pink;
+            width: 230px;
+            height: 30px;
+        }
+
+        .login {
+            /* 위상단 로그인 */
+            border: 1px solid green;
+            background-color: pink;
+            width: 30px;
+            height: 30px;
+        }
+
+        .the-bottom {
+            /* 하단 div 컨테이너 */
+            /* border: 1px solid green; */
+            display: flex;
+            flex-direction: row;
+            box-sizing: border-box;
+            width: 100%;
+            height: 500px;
+        }
+
+        .menu {
+            /* 하단 메뉴 */
+            border: 1px solid blue;
+            background-color: pink;
+            width: 120px;
+            height: 100%;
+        }
+
+        .content {
+            /* 하단 내용 */
+            border: 1px solid blue;
+            background-color: pink;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 280px;
+            height: 100%;
+        }
+
+        .content div {
+            border: 1px solid lightseagreen;
+            background-color: green;
+            width: 60px;
+            height: 60px;
+            margin-top: 20px;
+        }
+
+        /*** menu ***/
+        ul { list-style-type: none; margin:0; padding:0; }
+        a { text-decoration: none; color:black; }
+        #nav { height:100%; }
+        #nav > li { float:left; 
+                    width:120px; 
+                    height:40px;
+                    text-align:center; }
+        #nav a { font-size:18px;
+                font-weight:900;
+                width:100%; height:35px;
+                display: block; 
+                line-height:35px; } 
+        #nav > li > ul { display:none; }
+        #nav a:hover { color:navy; scale: 1.1; } 
+        /*
+            #nav a:hover { color:navy; scale: 1.1; } 
+            #nav > li > a:hover + ul { display: block; }
+            #nav > li > ul:hover { display: block; }
+            #nav > li > ul a:hover { color:aqua; }
+        */
+    </style>
+</head>
+
+<body>
+    <div class="youtube">
+        <!-- 상단 => YouTube아이콘 | 검색 | 로그인아이콘 -->
+        <div class="the-top">
+            <div class="youtube-image"></div>
+            <div class="search"></div>
+            <div class="login"></div>
+        </div>
+        <div class="the-bottom">
+            <div class="menu">
+                <ul id="nav">
+                    <li><a href="">Front-end</a>
+                        <ul>
+                            <li><a href="">HTML</a></li>
+                            <li><a href="">CSS</a></li>
+                            <li><a href="">JavaScript</a></li>
+                            <li><a href="">JQuery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Java</a></li>
+                    <li><a href="">Database</a></li>
+                    <li><a href="">Server</a>
+                        <ul>
+                            <li><a href="">JDBC</a></li>
+                            <li><a href="">Servlet</a></li>
+                            <li><a href="">JSP</a></li>
+                            <li><a href="">Ajax</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Framework</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="item">썸네일1</div>
+                <div class="item">썸네일2</div>
+                <div class="item">썸네일3</div>
+            </div>
+        </div>
+</body>
+
+</html>

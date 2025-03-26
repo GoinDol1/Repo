@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>할 일 추가</title>
+  <style>
+    .wrap {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    .task-form {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .task-form input {
+      flex: 1;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    .task-form button {
+      padding: 5px 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .task-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>할 일 목록</h1>
+    <div class="task-form">
+      <input type="text" id="taskInput" placeholder="할 일을 입력하세요">
+      <button id="addTaskButton">추가</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    // TODO: 추가 버튼 클릭 이벤트 핸들러 추가 : 표준 이벤트 방식 사용
+
+    /*
+      * 추가 버튼 클릭 시 수행할 내용 *
+
+      입력된 할 일 정보를 확인하여 값이 없을 경우 "할 일을 입력하세요!" 알림창 표시
+      값이 있을 경우 ul#taskList 요소 영역에 아래와 같은 노드 추가
+
+        <li class="task-item"><span>{입력된값}</span><button>삭제</button></li>
+        * 요소노드(Element) : 태그 자체
+        * 텍스트노드(TextNode) : 내용 부분
+        * 요소객체.className : 태그에서의 class 속성
+
+      그 후, 할 일을 입력하는 요소를 초기화 (''으로 변경)
+    */
+        // 버튼 요소 객체 가지고 오기
+        const addBtn = document.getElementById("addTaskButton");
+        const taskInBox = document.getElementById("taskInput");
+        // 선택한요소.addEventListner("이벤트명", 이벤트핸들러(함수));
+        // * 버튼 클릭되었을 때 알림창 띄워보기
+        addBtn.addEventListener("click", function()
+            {
+                // 이벤트 발생 시 실행할 코드
+                if(taskInBox.value == "")
+                    alert("할 일을 입력하세요!");
+                else
+                {
+
+                    const taskList = document.getElementById("taskList");
+                    const element1 = document.createElement("li");
+                    element1.className = "task-item";
+                    const element2 = document.createElement("span");
+                    const textnode1 = document.createTextNode(taskInBox.value);
+                    const element3 = document.createElement("button");
+                    const textnode2 = document.createTextNode("삭제");
+
+                    taskList.appendChild(element1);
+                    element1.appendChild(element2);
+                    element2.appendChild(textnode1);
+                    element1.appendChild(element3);
+                    element3.appendChild(textnode2);
+
+                    taskInBox.value = "";
+
+                }
+            });
+        
+
+  </script>
+</body>
+</html>
